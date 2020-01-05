@@ -3,13 +3,13 @@
 
         {{#each categories}}
 
-            <video class="video" data-category="{{id}}" autoplay muted loop autobuffer playsinline>
-                <source src="{{video}}" type="video/mp4">
+            <video class="video" data-category="{{id}}" autoplay muted loop playsinline>
+                <source src="{{js "app.methods.getLink(this.video)"}}" type="video/mp4">
             </video>
 
         {{/each}}
 
-        <div class="fab fab-right-top color-gray sound-icons">
+        <div class="fab fab-right-top sound-icons">
 
             <a class="sound" href="#">
 
@@ -41,7 +41,7 @@
 
                                 {{#each items}}
 
-                                    <list-item name="{{name}}" audio="{{audio}}" image="{{image}}"></list-item>
+                                    <list-item name="{{name}}" audio="{{js "app.methods.getLink(this.audio)"}}" image="{{js "app.methods.getLink(this.image)"}}"></list-item>
 
                                 {{/each}}
 
@@ -99,6 +99,10 @@
         transition: .3s;
     }
 
+    {{this}} .fab, .fab a {
+                 background: transparent;
+                 box-shadow: none;
+             }
     {{this}}.change::before {
                 opacity: 1;
             }
@@ -134,6 +138,9 @@
                  overflow: hidden;
     }
 
+    {{this}} .items .item .preloader-block {
+                 line-height: var(--f7-list-item-height);
+             }
     {{this}} .items .item.active {
                  opacity: .7;
              }
@@ -522,10 +529,11 @@
 
                     }
 
-                    var image = $$(this).data('image');
-                    var name = $$(this).data('name');
-                    var audio = $$(this).data('audio');
-                    var isActive = $$(this).hasClass('active');
+                    var item = $$(this);
+                    var image = item.data('image');
+                    var name = item.data('name');
+                    var audio = item.data('audio');
+                    var isActive = item.hasClass('active');
 
                     if (isActive) {
 
@@ -539,6 +547,9 @@
 
                     if (component[audio] == undefined) {
 
+                        item.find('.preloader-block').removeClass('display-none');
+                        item.find('.pause').addClass('display-none');
+
                         component[audio] = new Howl({
                             src: audio,
                             loop: true,
@@ -546,7 +557,13 @@
                             preload: false,
                             //usingWebAudio: false,
                             //webAudio: false,
-                            volume: 1
+                            volume: 1,
+                            onplay: function () {
+
+                                item.find('.preloader-block').addClass('display-none');
+                                item.find('.pause').removeClass('display-none');
+
+                            }
                         });
 
                         setInterval(function () {

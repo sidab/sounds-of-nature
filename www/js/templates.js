@@ -2,6 +2,12 @@ Framework7.registerComponent('list-item', {
     template: `
 
         <div class="col-50 medium-50 item" data-name="{{$props.name}}" data-audio="{{$props.audio}}" data-image="{{$props.image}}" style="background-image: url('{{$props.image}}')">
+            
+            <div class="preloader-block text-align-center display-none">
+            
+                <div class="preloader color-white"></div>
+    
+            </div>
     
             <i class="icon f7-icons pause">pause_fill</i>
             

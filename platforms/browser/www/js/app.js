@@ -6,6 +6,7 @@ var app = new Framework7({
     theme: 'ios',
     version: 1.0,
     routes: routes,
+    backend: 'http://sounds-of-nature.umakhan.tmweb.ru/',
     language: localStorage.language !== undefined ? localStorage.language : 'english',
     dialog: {
         buttonOk: 'Ок',
@@ -68,6 +69,13 @@ var app = new Framework7({
             var app = this;
 
             return app.data.languages[app.params.language][input];
+
+        },
+        getLink: function (path) {
+
+            var app = this;
+
+            return app.params.backend + path;
 
         }
     },
