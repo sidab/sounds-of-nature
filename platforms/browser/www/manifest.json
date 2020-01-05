@@ -1,0 +1,19 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "Relax",
+  "short_name": "Relax",
+  "version": "com.sound_of_nature.umakhan",
+  "description": "Sounds Of Nature.",
+  "author": "Umakhan Magomedov",
+  "icons": [
+    {
+      "src": "www/icon.png",
+      "type": "image/png",
+      "sizes": "undefinedxundefined"
+    }
+  ],
+  "orientation": "portrait",
+  "start_url": "index.html",
+  "theme_color": "#007aff"
+}

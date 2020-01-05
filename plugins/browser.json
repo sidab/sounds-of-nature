@@ -1,0 +1,34 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.sound_of_nature.umakhan"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.sound_of_nature.umakhan"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.sound_of_nature.umakhan"
+    },
+    "cordova-plugin-wkwebview-engine": {
+      "PACKAGE_NAME": "com.sound_of_nature.umakhan"
+    },
+    "cordova-plugin-wkwebview-file-xhr": {
+      "PACKAGE_NAME": "com.sound_of_nature.umakhan"
+    },
+    "cordova-plugin-background-mode": {
+      "PACKAGE_NAME": "com.sound_of_nature.umakhan"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.sound_of_nature.umakhan"
+    }
+  }
+}
