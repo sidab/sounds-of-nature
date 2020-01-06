@@ -116,10 +116,21 @@ $$(document).on('deviceready', function () {
 
     }
 
+    if (app.device.ios) {
+
+        setTimeout(function () {
+
+            app.statusbar.hide();
+            app.statusbar.show();
+
+        });
+
+    }
+
     setTimeout(function () {
 
         navigator.splashscreen.hide();
 
-    }, 3000);
+    }, 2000);
 
 });
