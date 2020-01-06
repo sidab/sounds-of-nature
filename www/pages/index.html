@@ -1,14 +1,6 @@
 <template>
     <div class="page">
 
-        {{#each categories}}
-
-            <video class="video" data-category="{{id}}" autoplay muted loop playsinline>
-                <source src="{{video}}" type="video/mp4">
-            </video>
-
-        {{/each}}
-
         <div class="fab fab-right-top sound-icons">
 
             <a class="sound" href="#">
@@ -27,13 +19,17 @@
 
         <div class="page-content">
 
-            <div class="tabs-swipeable-wrap">
+            <div class="swiper-container categories">
 
-                <div class="tabs">
+                <div class="swiper-wrapper categories-inner">
 
                     {{#each categories}}
 
-                        <div data-category="{{id}}" class="category tab {{#js_if "this.@index === 0"}}tab-active{{/js_if}}">
+                        <div data-category="{{id}}" class="category swiper-slide">
+
+                            <video class="video" autoplay muted loop playsinline>
+                                <source src="{{video}}" type="video/mp4">
+                            </video>
 
                             <div class="block-title block-title-large text-align-center">{{name}}</div>
 
@@ -106,25 +102,31 @@
     {{this}}.change::before {
                 opacity: 1;
             }
+
+    {{this}} .categories {
+
+             }
+    {{this}} .categories .categories-inner {
+
+             }
+    {{this}} .categories .categories-inner .category {
+height: 100vh;
+                 overflow: hidden;
+             }
     {{this}} .page-content {
-        background: rgba(0, 0, 0, 0.3);
-                 -webkit-backdrop-filter: blur(3px);
-                 -moz-backdrop-filter: blur(3px);
-                 -o-backdrop-filter: blur(3px);
-                 -ms-backdrop-filter: blur(3px);
-        backdrop-filter: blur(3px);
+
     }
 
     {{this}} .video {
-                 position: fixed;
+                 position: absolute;
                  height: 100%;
-        opacity: 0;
-        transition: .3s;
+                 -webkit-filter: blur(5px);
+                 -moz-filter: blur(5px);
+                 -o-filter: blur(5px);
+                 -ms-filter: blur(5px);
+                 filter: blur(5px);
     }
 
-    {{this}} .video.active {
-                 opacity: 1;
-             }
 
     {{this}} .items {
         margin-top: 35px;
@@ -146,7 +148,8 @@
                  line-height: var(--f7-list-item-height);
              }
     {{this}} .items .item.active {
-                 opacity: .7;
+                 border-color: orange;
+                 color: orange !important;
              }
 
     {{this}} .items .item.active .range-slider {
@@ -215,7 +218,7 @@
                     {
                         id: 'nature',
                         name: app.methods.lang('nature'),
-                        video: 'video/nature.mp4?v=1',
+                        video: 'video/nature.mp4',
                         items: [
 
                             {
@@ -377,60 +380,6 @@
 
         },
         methods: {
-            isOnScreen: function (category) {
-
-                var component = this;
-                var app = component.$app;
-                var page = component.$el;
-
-                var viewport = page.find('.page-content').scrollTop();
-
-                var offset;
-
-                if (category.data('offset')) {
-
-                    offset = category.data('offset');
-
-                } else {
-
-                    offset = category.offset().top - category.height();
-
-                    category.attr('data-offset', offset);
-
-                }
-
-                if (viewport > offset) {
-
-                    return true;
-
-                } else {
-
-                    return false;
-
-                }
-
-            },
-            changeVideo: function () {
-
-                var component = this;
-                var app = component.$app;
-                var page = component.$el;
-
-                var active = $$('.tab-active').data('category');
-
-                var oldActive = page.find('.video.active').data('category');
-
-                if (active !== oldActive) {
-
-                    $$('.video').removeClass('active');
-
-                    $$('.video[data-category="' + active + '"]').addClass('active');
-
-                    $$('.video[data-category="' + active + '"]')[0].play();
-
-                }
-
-            },
             update: function () {
 
                 var component = this;
@@ -504,6 +453,21 @@
                 var component = this;
                 var app = component.$app;
                 var page = component.$el;
+
+                var categoriesSwiper = new Swiper('.swiper-container', {
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                    cssMode: true
+                });
+
+                page.find('.video').each(function () {
+
+                    $$(this).on('loadeddata', function () {
+                        $$(this)[0].muted = true;
+                        $$(this)[0].play();
+                    });
+
+                });
 
                 page.find('.sound-icons').find('a').on('click', function () {
 
@@ -606,26 +570,6 @@
                     }
 
                 });
-
-                page.find('.video').each(function () {
-
-                    $$(this).on('loadeddata', function () {
-
-                        $$(this)[0].muted = true;
-
-                        $$(this)[0].play();
-
-                    });
-
-                });
-
-                page.find('.tab').on('tab:show', function () {
-
-                    component.changeVideo();
-
-                });
-
-                component.changeVideo();
 
             },
             pageAfterIn: function () {

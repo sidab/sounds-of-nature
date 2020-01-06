@@ -15,14 +15,6 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-statusbar": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-statusbar@2.4.3"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-wkwebview-engine": {
     "source": {
       "type": "registry",
@@ -59,6 +51,22 @@
     "source": {
       "type": "registry",
       "id": "cordova-plugin-crosswalk-webview@2.4.0"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-build-architecture": {
+    "source": {
+      "type": "registry",
+      "id": "https://github.com/MBuchalik/cordova-build-architecture.git#v1.0.4"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-statusbar": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-statusbar@2.4.3"
     },
     "is_top_level": true,
     "variables": {}
