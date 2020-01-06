@@ -4,7 +4,7 @@
         {{#each categories}}
 
             <video class="video" data-category="{{id}}" autoplay muted loop playsinline>
-                <source src="{{js "app.methods.getLink(this.video)"}}" type="video/mp4">
+                <source src="{{video}}" type="video/mp4">
             </video>
 
         {{/each}}
@@ -41,7 +41,7 @@
 
                                 {{#each items}}
 
-                                    <list-item name="{{name}}" audio="{{js "app.methods.getLink(this.audio)"}}" image="{{js "app.methods.getLink(this.image)"}}"></list-item>
+                                    <list-item name="{{name}}" audio="{{js "app.methods.getLink(this.audio)"}}" image="{{image}}"></list-item>
 
                                 {{/each}}
 
@@ -108,6 +108,10 @@
             }
     {{this}} .page-content {
         background: rgba(0, 0, 0, 0.3);
+                 -webkit-backdrop-filter: blur(3px);
+                 -moz-backdrop-filter: blur(3px);
+                 -o-backdrop-filter: blur(3px);
+                 -ms-backdrop-filter: blur(3px);
         backdrop-filter: blur(3px);
     }
 
@@ -421,6 +425,8 @@
                     $$('.video').removeClass('active');
 
                     $$('.video[data-category="' + active + '"]').addClass('active');
+
+                    $$('.video[data-category="' + active + '"]')[0].play();
 
                 }
 
