@@ -473,7 +473,14 @@ height: 100%;
                     slidesPerView: 1,
                     spaceBetween: 0,
                     //setWrapperSize: true,
-                    cssMode: true,
+                    cssMode: app.device.ios ? true : false,
+                    on: {
+                        slideChange: function () {
+
+                            $$('.swiper-slide-active').find('.video')[0].play();
+
+                        }
+                    }
                 });
 
                 page.find('.video').each(function () {

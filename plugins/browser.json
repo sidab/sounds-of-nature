@@ -30,6 +30,9 @@
     },
     "cordova-plugin-statusbar": {
       "PACKAGE_NAME": "com.soundsofnature.umakhan"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "com.soundsofnature.umakhan"
     }
   },
   "dependent_plugins": {

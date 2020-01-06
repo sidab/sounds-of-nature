@@ -11,7 +11,8 @@
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-crosswalk-webview": {},
       "cordova-build-architecture": {},
-      "cordova-plugin-statusbar": {}
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-ionic-webview": {}
     },
     "platforms": [
       "ios"
