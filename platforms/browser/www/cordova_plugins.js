@@ -67,7 +67,8 @@ module.exports.metadata =
     "cordova-plugin-wkwebview-engine": "1.2.1",
     "cordova-plugin-wkwebview-file-xhr": "2.1.1",
     "cordova-plugin-device": "2.0.3",
-    "cordova-plugin-background-mode": "0.7.3"
+    "cordova-plugin-background-mode": "0.7.3",
+    "cordova-plugin-crosswalk-webview": "2.4.0"
 }
 // BOTTOM OF METADATA
 });

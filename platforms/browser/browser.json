@@ -42,6 +42,9 @@
     },
     "cordova-plugin-background-mode": {
       "PACKAGE_NAME": "com.sound_of_nature.umakhan"
+    },
+    "cordova-plugin-crosswalk-webview": {
+      "PACKAGE_NAME": "com.soundsofnature.umakhan"
     }
   },
   "dependent_plugins": {},
@@ -111,6 +114,7 @@
     "cordova-plugin-wkwebview-engine": "1.2.1",
     "cordova-plugin-wkwebview-file-xhr": "2.1.1",
     "cordova-plugin-device": "2.0.3",
-    "cordova-plugin-background-mode": "0.7.3"
+    "cordova-plugin-background-mode": "0.7.3",
+    "cordova-plugin-crosswalk-webview": "2.4.0"
   }
 }

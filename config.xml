@@ -21,6 +21,8 @@
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#007aff" />
     <preference name="AllowInlineMediaPlayback" value="true" />
+    <preference name="android-minSdkVersion" value="19" />
+    <preference name="xwalk64bit" value="true" />
     <feature name="CDVWKWebViewEngine">
         <param name="ios-package" value="CDVWKWebViewEngine" />
     </feature>
@@ -75,4 +77,7 @@
         <splash density="port-xxxhdpi" src="www/res/screen/android/splash-port-xxxhdpi.png" />
     </platform>
     <icon src="www/icon.png" />
+    <plugin name="cordova-plugin-crosswalk-webview" spec="2.4.0" />
+    <plugin name="cordova-build-architecture" spec="https://github.com/MBuchalik/cordova-build-architecture.git#v1.0.4" />
+    <preference name="buildArchitecture" value="arm64" />
 </widget>

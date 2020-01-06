@@ -24,6 +24,9 @@
     },
     "cordova-plugin-background-mode": {
       "PACKAGE_NAME": "com.sound_of_nature.umakhan"
+    },
+    "cordova-plugin-crosswalk-webview": {
+      "PACKAGE_NAME": "com.soundsofnature.umakhan"
     }
   },
   "dependent_plugins": {
