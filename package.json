@@ -13,7 +13,9 @@
       "cordova-build-architecture": {},
       "cordova-plugin-statusbar": {}
     },
-    "platforms": []
+    "platforms": [
+      "ios"
+    ]
   },
   "dependencies": {
     "cordova-ios": "^5.1.1",

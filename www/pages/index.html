@@ -108,14 +108,15 @@
             }
 
     {{this}} .categories {
-
+height: 100%
              }
     {{this}} .categories .categories-inner {
 
              }
     {{this}} .categories .categories-inner .category {
-height: 100vh;
+height: 100%;
                  overflow: hidden;
+                 position: relative;
              }
     {{this}} .categories .categories-inner .category .category-inner {
                  position: relative;
@@ -468,13 +469,11 @@ height: 100vh;
                 var app = component.$app;
                 var page = component.$el;
 
-                var categoriesSwiper = new Swiper('.swiper-container', {
+                new Swiper(page.find('.swiper-container'), {
                     slidesPerView: 1,
                     spaceBetween: 0,
                     //setWrapperSize: true,
                     cssMode: true,
-                    //simulateTouch: false,
-                    //speed: 300
                 });
 
                 page.find('.video').each(function () {
