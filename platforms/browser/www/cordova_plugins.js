@@ -56,14 +56,6 @@ module.exports = [
         "id": "cordova-plugin-background-mode.BackgroundMode.Proxy",
         "pluginId": "cordova-plugin-background-mode",
         "runs": true
-    },
-    {
-        "file": "plugins/cordova-plugin-ionic-webview/src/www/util.js",
-        "id": "cordova-plugin-ionic-webview.IonicWebView",
-        "pluginId": "cordova-plugin-ionic-webview",
-        "clobbers": [
-            "Ionic.WebView"
-        ]
     }
 ];
 module.exports.metadata = 
@@ -77,8 +69,7 @@ module.exports.metadata =
     "cordova-plugin-device": "2.0.3",
     "cordova-plugin-background-mode": "0.7.3",
     "cordova-build-architecture": "1.0.4",
-    "cordova-plugin-crosswalk-webview": "2.4.0",
-    "cordova-plugin-ionic-webview": "4.1.3"
+    "cordova-plugin-crosswalk-webview": "2.4.0"
 }
 // BOTTOM OF METADATA
 });

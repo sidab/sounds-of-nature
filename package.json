@@ -11,12 +11,14 @@
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-crosswalk-webview": {},
       "cordova-build-architecture": {},
-      "cordova-plugin-statusbar": {},
-      "cordova-plugin-ionic-webview": {}
+      "cordova-plugin-statusbar": {}
     },
-    "platforms": []
+    "platforms": [
+      "ios"
+    ]
   },
   "dependencies": {
+    "cordova-ios": "^5.1.1",
     "cordova-plugin-statusbar": "2.4.3"
   }
 }
