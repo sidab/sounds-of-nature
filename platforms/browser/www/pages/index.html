@@ -87,17 +87,6 @@
         background-repeat: no-repeat;
     }
 
-    {{this}}::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: #000;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        transition: .3s;
-    }
 
     {{this}} .fab, .fab a {
                  background: transparent;
@@ -149,7 +138,6 @@ height: 100%;
                  border-radius: 5px;
                  position: relative;
         margin-bottom: 30px;
-        transition: .3s;
                  border: 3px solid #eee;
                  overflow: hidden;
     }
@@ -176,7 +164,6 @@ height: 100%;
                  bottom: 0px;
                  --f7-range-bar-size: 5px;
                  opacity: 0;
-        transition: .3s;
                  visibility: hidden;
         width: 90%;
              }
@@ -186,7 +173,6 @@ height: 100%;
                  margin: 0 auto;
              }
     {{this}} .items .item .icon {
-                 transition: .3s;
                  position: absolute;
                  font-size: 40px;
                  width: 100%;
