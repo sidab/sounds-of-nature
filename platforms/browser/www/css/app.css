@@ -46,3 +46,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     }
 
 }
+
+.device-ios .items .item .range-slider-out {
+    display: none;
+}

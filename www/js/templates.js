@@ -13,7 +13,7 @@ Framework7.registerComponent('list-item', {
             
             <i class="icon f7-icons play">play_fill</i>
             
-            <div class="if-not-ios range-slider-out">
+            <div class="range-slider-out">
             
                 <div class="range-slider color-white range-slider-init" data-value="1.0" data-min="0.0" data-max="1.0" data-step="0.01"></div>
             
