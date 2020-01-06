@@ -14,12 +14,9 @@
       "cordova-plugin-statusbar": {},
       "cordova-plugin-ionic-webview": {}
     },
-    "platforms": [
-      "ios"
-    ]
+    "platforms": []
   },
   "dependencies": {
-    "cordova-ios": "^5.1.1",
     "cordova-plugin-statusbar": "2.4.3"
   }
 }
