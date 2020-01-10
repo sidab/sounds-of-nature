@@ -460,13 +460,19 @@ height: 100%;
                 var app = component.$app;
                 var page = component.$el;
 
-                cordova.plugins.backgroundMode.enable();
+                try {
 
-                setTimeout(function () {
+                    //cordova.plugins.backgroundMode.enable();
 
-                    cordova.plugins.backgroundMode.disable();
+                    setTimeout(function () {
 
-                }, 3600000);
+                        //cordova.plugins.backgroundMode.disable();
+
+                    }, 3600000);
+
+                } catch (e) {
+
+                }
 
                 new Swiper(page.find('.swiper-container'), {
                     slidesPerView: 1,
@@ -485,8 +491,11 @@ height: 100%;
                 page.find('.video').each(function () {
 
                     $$(this).on('loadeddata', function () {
+
                         $$(this)[0].muted = true;
+
                         $$(this)[0].play();
+
                     });
 
                 });
@@ -527,6 +536,9 @@ height: 100%;
                     var isActive = item.hasClass('active');
                     var index = item.data('index');
 
+                    item.find('.preloader-block').removeClass('display-none');
+                    item.find('.pause').addClass('display-none');
+
                     var category = component.categories.find(function (category) {
 
                         return category.id == item.parents('.category').data('category');
@@ -546,9 +558,6 @@ height: 100%;
                     }
 
                     if (component[category.id] == undefined) {
-
-                        item.find('.preloader-block').removeClass('display-none');
-                        item.find('.pause').addClass('display-none');
 
                         var sprite = {};
 
@@ -572,6 +581,15 @@ height: 100%;
                                 item.find('.pause').removeClass('display-none');
 
                             }
+                        });
+
+                    } else {
+
+                        setTimeout(function () {
+
+                            item.find('.preloader-block').addClass('display-none');
+                            item.find('.pause').removeClass('display-none');
+
                         });
 
                     }
@@ -611,7 +629,7 @@ height: 100%;
             },
             pageAfterIn: function () {
 
-                component = this;
+                var component = this;
                 var app = component.$app;
                 var page = component.$el;
 
