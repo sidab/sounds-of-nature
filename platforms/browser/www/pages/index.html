@@ -25,10 +25,10 @@
 
                     {{#each categories}}
 
-                        <div data-category="{{id}}" class="category swiper-slide">
+                        <div data-category="{{id}}" data-audio="{{js "app.methods.getLink(this.audio)"}}" class="category swiper-slide">
 
                             <video class="video" autoplay muted loop playsinline>
-                                <source src="{{video}}" type="video/mp4">
+                                <source src="{{video}}">
                             </video>
 
                             <div class="category-inner">
@@ -39,7 +39,7 @@
 
                                     {{#each items}}
 
-                                        <list-item name="{{name}}" audio="{{js "app.methods.getLink(this.audio)"}}" image="{{image}}"></list-item>
+                                        <list-item name="{{name}}" index="{{@index}}" image="{{image}}"></list-item>
 
                                     {{/each}}
 
@@ -220,37 +220,38 @@ height: 100%;
                         id: 'nature',
                         name: app.methods.lang('nature'),
                         video: 'video/nature.mp4',
+                        audio: 'audio/nature.mp3',
                         items: [
 
                             {
                                 name: app.methods.lang('nature') + '1',
                                 image: 'images/nature/1.jpg',
-                                audio: 'audio/nature/1.mp3'
+                                audio: [0, 1202100]
                             },
                             {
                                 name: app.methods.lang('nature') + '2',
                                 image: 'images/nature/2.jpg',
-                                audio: 'audio/nature/2.mp3'
+                                audio: [1202100, 2404300]
                             },
                             {
                                 name: app.methods.lang('nature') + '3',
                                 image: 'images/nature/3.jpg',
-                                audio: 'audio/nature/3.mp3'
+                                audio: [2404300, 3148500]
                             },
                             {
                                 name: app.methods.lang('nature') + '4',
                                 image: 'images/nature/4.jpg',
-                                audio: 'audio/nature/4.mp3'
+                                audio: [3148500, 3478500]
                             },
                             {
                                 name: app.methods.lang('nature') + '5',
                                 image: 'images/nature/5.jpg',
-                                audio: 'audio/nature/5.mp3'
+                                audio: [3478500, 4680700]
                             },
                             {
                                 name: app.methods.lang('nature') + '6',
                                 image: 'images/nature/6.jpg',
-                                audio: 'audio/nature/6.mp3'
+                                audio: [4680700, 4982000]
                             }
                         ]
                     },
@@ -258,27 +259,28 @@ height: 100%;
                         id: 'bonfire',
                         name: app.methods.lang('bonfire'),
                         video: 'video/bonfire.mp4',
+                        audio: 'audio/bonfire.mp3',
                         items: [
 
                             {
                                 name: app.methods.lang('bonfire') + '1',
                                 image: 'images/bonfire/1.jpg',
-                                audio: 'audio/bonfire/1.mp3'
+                                audio: [0, 470900]
                             },
                             {
                                 name: app.methods.lang('bonfire') + '2',
                                 image: 'images/bonfire/2.jpg',
-                                audio: 'audio/bonfire/2.mp3'
+                                audio: [470900, 578100]
                             },
                             {
                                 name: app.methods.lang('bonfire') + '3',
                                 image: 'images/bonfire/3.jpg',
-                                audio: 'audio/bonfire/3.mp3'
+                                audio: [578100, 840400]
                             },
                             {
                                 name: app.methods.lang('bonfire') + '4',
                                 image: 'images/bonfire/4.jpg',
-                                audio: 'audio/bonfire/4.mp3'
+                                audio: [840400, 2646000]
                             }
                         ]
                     },
@@ -286,27 +288,28 @@ height: 100%;
                         id: 'rain',
                         name: app.methods.lang('rain'),
                         video: 'video/rain.mp4',
+                        audio: 'audio/rain.mp3',
                         items: [
 
                             {
                                 name: app.methods.lang('rain') + '1',
                                 image: 'images/rain/1.jpg',
-                                audio: 'audio/rain/1.mp3'
+                                audio: [0, 1201500]
                             },
                             {
                                 name: app.methods.lang('rain') + '1',
                                 image: 'images/rain/2.jpg',
-                                audio: 'audio/rain/2.mp3'
+                                audio: [1201500, 2405100]
                             },
                             {
                                 name: app.methods.lang('rain') + '1',
                                 image: 'images/rain/3.jpg',
-                                audio: 'audio/rain/3.mp3'
+                                audio: [2405100, 2575200]
                             },
                             {
                                 name: app.methods.lang('rain') + '1',
                                 image: 'images/rain/4.jpg',
-                                audio: 'audio/rain/4.mp3'
+                                audio: [2575200, 3780700]
                             },
                         ]
                     },
@@ -314,37 +317,38 @@ height: 100%;
                         id: 'sea',
                         name: app.methods.lang('sea'),
                         video: 'video/sea.mp4',
+                        audio: 'audio/sea.mp3',
                         items: [
 
                             {
                                 name: app.methods.lang('sea') + '1',
                                 image: 'images/sea/1.jpg',
-                                audio: 'audio/sea/1.mp3'
+                                audio: [0, 1201600]
                             },
                             {
                                 name: app.methods.lang('sea') + '2',
                                 image: 'images/sea/2.jpg',
-                                audio: 'audio/sea/2.mp3'
+                                audio: [1201600, 1441600]
                             },
                             {
                                 name: app.methods.lang('sea') + '3',
                                 image: 'images/sea/3.jpg',
-                                audio: 'audio/sea/3.mp3'
+                                audio: [1441600, 1681800]
                             },
                             {
                                 name: app.methods.lang('sea') + '4',
                                 image: 'images/sea/4.jpg',
-                                audio: 'audio/sea/4.mp3'
+                                audio: [1681800, 2883800]
                             },
                             {
                                 name: app.methods.lang('sea') + '5',
                                 image: 'images/sea/5.jpg',
-                                audio: 'audio/sea/5.mp3'
+                                audio: [2883800, 3783800]
                             },
                             {
                                 name: app.methods.lang('sea') + '6',
                                 image: 'images/sea/6.jpg',
-                                audio: 'audio/sea/6.mp3'
+                                audio: [3783800, 4447800]
                             }
                         ]
                     },
@@ -352,27 +356,28 @@ height: 100%;
                         id: 'train',
                         name: app.methods.lang('train'),
                         video: 'video/train.mp4',
+                        audio: 'audio/train.mp3',
                         items: [
 
                             {
                                 name: app.methods.lang('train') + '1',
                                 image: 'images/train/1.jpg',
-                                audio: 'audio/train/1.mp3'
+                                audio: [0, 182200]
                             },
                             {
                                 name: app.methods.lang('train') + '2',
                                 image: 'images/train/2.jpg',
-                                audio: 'audio/train/2.mp3'
+                                audio: [182200, 364400]
                             },
                             {
                                 name: app.methods.lang('train') + '3',
                                 image: 'images/train/3.jpg',
-                                audio: 'audio/train/3.mp3'
+                                audio: [364400, 414900]
                             },
                             {
                                 name: app.methods.lang('train') + '4',
                                 image: 'images/train/4.jpg',
-                                audio: 'audio/train/4.mp3'
+                                audio: [414900, 1221000]
                             },
                         ]
                     }
@@ -455,6 +460,14 @@ height: 100%;
                 var app = component.$app;
                 var page = component.$el;
 
+                cordova.plugins.backgroundMode.enable();
+
+                setTimeout(function () {
+
+                    cordova.plugins.backgroundMode.disable();
+
+                }, 3600000);
+
                 new Swiper(page.find('.swiper-container'), {
                     slidesPerView: 1,
                     spaceBetween: 0,
@@ -511,33 +524,48 @@ height: 100%;
                     var item = $$(this);
                     var image = item.data('image');
                     var name = item.data('name');
-                    var audio = item.data('audio');
                     var isActive = item.hasClass('active');
+                    var index = item.data('index');
+
+                    var category = component.categories.find(function (category) {
+
+                        return category.id == item.parents('.category').data('category');
+
+                    });
 
                     if (isActive) {
 
                         $$(this).removeClass('active');
 
-                        component[audio].pause();
+                        var audioId = Number(item.data('id'));
+
+                        component[category.id].pause(audioId);
 
                         return false;
 
                     }
 
-                    if (component[audio] == undefined) {
+                    if (component[category.id] == undefined) {
 
                         item.find('.preloader-block').removeClass('display-none');
                         item.find('.pause').addClass('display-none');
 
-                        component[audio] = new Howl({
-                            src: audio,
+                        var sprite = {};
+
+                        for (let i = 0; i < category.items.length; i++) {
+
+                            let item = category.items[i];
+
+                            sprite[i] = item.audio;
+
+                        }
+
+                        component[category.id] = new Howl({
+                            src: app.methods.getLink(category.audio),
+                            sprite: sprite,
                             loop: true,
-                            html5: true,
-                            preload: false,
-                            ctx: false,
-                            usingWebAudio: false,
-                            webAudio: false,
                             volume: 1,
+                            html5: true,
                             onplay: function () {
 
                                 item.find('.preloader-block').addClass('display-none');
@@ -546,23 +574,21 @@ height: 100%;
                             }
                         });
 
-                        setInterval(function () {
-
-                            if (component[audio].playing()) {
-
-                                cordova.plugins.backgroundMode.enable();
-
-                            } else {
-
-                                cordova.plugins.backgroundMode.disable();
-
-                            }
-
-                        }, 10000);
-
                     }
 
-                    component[audio].play();
+                    if (item.data('id') == undefined) {
+
+                        var audioId = component[category.id].play(index);
+
+                        item.attr('data-id', audioId);
+
+                    } else {
+
+                        var audioId = Number(item.data('id'));
+
+                        component[category.id].play(audioId);
+
+                    }
 
                     $$(this).addClass('active');
 
@@ -571,11 +597,12 @@ height: 100%;
                 page.find('.range-slider').on('range:change', function () {
 
                     var range = app.range.get($$(this));
-                    var audio = $$(this).parents('.item').data('audio');
+                    var audioId = $$(this).parents('.item').data('id');
+                    var category = $$(this).parents('.category').data('category');
 
-                    if (component[audio] !== undefined) {
+                    if (component[category] !== undefined) {
 
-                        component[audio].volume(range.value);
+                        component[category].volume(range.value, audioId);
 
                     }
 
@@ -584,7 +611,7 @@ height: 100%;
             },
             pageAfterIn: function () {
 
-                var component = this;
+                component = this;
                 var app = component.$app;
                 var page = component.$el;
 

@@ -131,6 +131,6 @@ $$(document).on('deviceready', function () {
 
         navigator.splashscreen.hide();
 
-    }, 2000);
+    }, 1000);
 
 });

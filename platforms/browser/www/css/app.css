@@ -2,6 +2,19 @@
     --f7-list-item-height: 130px
 }
 
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.device-android * {
+    touch-action: manipulation;
+}
+
 @media only screen and (max-device-width: 320px) {
 
     :root {
