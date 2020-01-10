@@ -536,9 +536,6 @@ height: 100%;
                     var isActive = item.hasClass('active');
                     var index = item.data('index');
 
-                    item.find('.preloader-block').removeClass('display-none');
-                    item.find('.pause').addClass('display-none');
-
                     var category = component.categories.find(function (category) {
 
                         return category.id == item.parents('.category').data('category');
@@ -581,15 +578,6 @@ height: 100%;
                                 item.find('.pause').removeClass('display-none');
 
                             }
-                        });
-
-                    } else {
-
-                        setTimeout(function () {
-
-                            item.find('.preloader-block').addClass('display-none');
-                            item.find('.pause').removeClass('display-none');
-
                         });
 
                     }
